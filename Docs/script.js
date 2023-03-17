@@ -1,5 +1,3 @@
-// Assignment code here
-
 //Create Arrays for the characters of the password
 var uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercase="abcdefghijklmnopqrstuvwxyz";
