@@ -18,21 +18,43 @@ function generatePassword () {
     alert("Password length must be between 8 and 128 characters");
     return generatePassword();
   }
-}
-
-//prompts for character types
-var includeslowercase= prompt("Do you want to include lowercase letters in your password?");
-var includesuppercase= prompt("Do you want to include uppercase letters in your password?");
-var includesnumbers= prompt("Do you want to include numbers in your password?");
-var includesspecialcharacters= prompt("Do you want to include special characters in your password?");
-
-
-//check to make sure at least one was selected
-
-if (!includeslowercase || !includesuppercase || !includesnumbers || !includesspecialcharacters){
-  alert("You must select at least one of the following to include in your password:\n \n Lowercase letters, uppercase letters, numbers or special characters");
+  //prompts for character types
+  var includeslowercase= prompt("Do you want to include lowercase letters in your password?");
+  var includesuppercase= prompt("Do you want to include uppercase letters in your password?");
+  var includesnumbers= prompt("Do you want to include numbers in your password?");
+  var includesspecialcharacters= prompt("Do you want to include special characters in your password?");
+  
+  //check to make sure at least one was selected
+  
+  if (!includeslowercase || !includesuppercase || !includesnumbers || !includesspecialcharacters){
+    alert("You must select at least one of the following to include in your password:\n \n Lowercase letters, uppercase letters, numbers or special characters");
   return generatePassword();
+  }
+  
+  //create a pool for password characters
+  var pool = "";
+  if (includeslowercase == true){
+    pool += includeslowercase;
+  }
+  if (includesuppercase == true){
+    pool += includesuppercase;
+  }
+  if (includesnumbers == true){
+    pool += includesnumbers;
+  }
+  if (includesspecialcharacters == true){
+    pool += includesspecialcharacters;
+  }
+  
+  //generates the actual password
+  for (var i = 0; i < passwordlength; i++){
+    var index = Math.floor(Math.random() * pool.length);
+    password += pool[index];
+  }
+
+  return password;
 }
+
 
 
 // Get references to the #generate element
