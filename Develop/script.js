@@ -19,31 +19,31 @@ function generatePassword () {
     return generatePassword();
   }
   //prompts for character types
-  var includeslowercase= prompt("Do you want to include lowercase letters in your password?");
-  var includesuppercase= prompt("Do you want to include uppercase letters in your password?");
-  var includesnumbers= prompt("Do you want to include numbers in your password?");
-  var includesspecialcharacters= prompt("Do you want to include special characters in your password?");
+  var includeslowercase= confirm("Do you want to include lowercase letters in your password?");
+  var includesuppercase= confirm("Do you want to include uppercase letters in your password?");
+  var includesnumbers= confirm("Do you want to include numbers in your password?");
+  var includesspecialcharacters= confirm("Do you want to include special characters in your password?");
   
   //check to make sure at least one was selected
   
-  if (!includeslowercase || !includesuppercase || !includesnumbers || !includesspecialcharacters){
+  if (!includeslowercase && !includesuppercase && !includesnumbers && !includesspecialcharacters){
     alert("You must select at least one of the following to include in your password:\n \n Lowercase letters, uppercase letters, numbers or special characters");
   return generatePassword();
   }
   
   //create a pool for password characters
   var pool = "";
-  if (includeslowercase == true){
-    pool += includeslowercase;
+  if (includeslowercase === true){
+    pool += lowercase;
   }
-  if (includesuppercase == true){
-    pool += includesuppercase;
+  if (includesuppercase === true){
+    pool += uppercase;
   }
-  if (includesnumbers == true){
-    pool += includesnumbers;
+  if (includesnumbers === true){
+    pool += numbers;
   }
-  if (includesspecialcharacters == true){
-    pool += includesspecialcharacters;
+  if (includesspecialcharacters === true){
+    pool += special;
   }
   
   //generates the actual password
