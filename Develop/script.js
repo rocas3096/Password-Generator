@@ -1,5 +1,13 @@
 // Assignment code here
 
+//Create Arrays for the characters of the password
+var uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var lowercase="abcdefghijklmnopqrstuvwxyz"
+var numbers="0123456789"
+var special="~`!@#$%^&*()-_=+[]{}|;\"':<>,./?"
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
