@@ -1,25 +1,38 @@
 // Assignment code here
 
 //Create Arrays for the characters of the password
-var uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var lowercase="abcdefghijklmnopqrstuvwxyz"
-var numbers="0123456789"
-var special="~`!@#$%^&*()-_=+[]{}|;\"':<>,./?"
+var uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercase="abcdefghijklmnopqrstuvwxyz";
+var numbers="0123456789";
+var special="~`!@#$%^&*()-_=+[]{}|;\"':<>,./?";
 
 
 //Write function for generating password
 function generatePassword () {
-  var password=""
-  var passwordlength= prompt("How long would you like your password to be?\n \nChoose a length between 8 and 128 characters")
+  var password="";
+  var passwordlength= prompt("How long would you like your password to be?\n \nChoose a length between 8 and 128 characters");
 
 
   //Double check for password length
   if (passwordlength < 8 || passwordlength > 128) {
-    alert("Password length must be between 8 and 128 characters")
-    return generatePassword()
+    alert("Password length must be between 8 and 128 characters");
+    return generatePassword();
   }
 }
 
+//prompts for character types
+var includeslowercase= prompt("Do you want to include lowercase letters in your password?");
+var includesuppercase= prompt("Do you want to include uppercase letters in your password?");
+var includesnumbers= prompt("Do you want to include numbers in your password?");
+var includesspecialcharacters= prompt("Do you want to include special characters in your password?");
+
+
+//check to make sure at least one was selected
+
+if (!includeslowercase || !includesuppercase || !includesnumbers || !includesspecialcharacters){
+  alert("You must select at least one of the following to include in your password:\n \n Lowercase letters, uppercase letters, numbers or special characters");
+  return generatePassword();
+}
 
 
 // Get references to the #generate element
