@@ -14,7 +14,7 @@ To find this website, use this link. https://rocas3096.github.io/Password-Genera
 
 To review this repository, use this link. https://github.com/rocas3096/Password-Generator
 
-![Password generator landing page](aassets/Password-Generator.png)
+![Password generator landing page](assets/Password-Generator.png)
 
 ## Credits
 
